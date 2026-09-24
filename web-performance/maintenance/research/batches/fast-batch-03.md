@@ -1,0 +1,8 @@
+- The performance effects of too much lazy loading (Footer 2022-03-31): https://web.dev/articles/lcp-lazy-loading
+- Serve images with correct dimensions (Footer 2018-11-05): https://web.dev/articles/serve-images-with-correct-dimensions
+- Largest Contentful Paint (LCP) (Published 2019-08-08, updated 2025-09-04): https://web.dev/articles/lcp
+- CSS for Web Vitals (Footer 2021-06-02): https://web.dev/articles/css-web-vitals
+- Debug performance in the field (Footer 2024-10-06): https://web.dev/articles/debug-performance-in-the-field
+- Manually diagnose slow interactions in the lab (Published 2023-05-09, footer 2024-10-17): https://web.dev/articles/manually-diagnose-slow-interactions-in-the-lab
+- Debug layout shifts (Published 2021-03-11, updated 2025-02-07): https://web.dev/articles/debug-layout-shifts
+- Use web workers to run JavaScript off the browser's main thread (Footer 2019-12-05): https://web.dev/articles/off-main-thread

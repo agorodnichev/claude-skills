@@ -1,0 +1,6 @@
+- [feature] WebAssembly integration with JavaScript BigInt (2020-11-12): https://v8.dev/features/wasm-bigint
+- Up to 4GB of memory in WebAssembly (2020-05-14): https://v8.dev/blog/4gb-wasm-memory
+- Introducing the WebAssembly JavaScript Promise Integration API (2024-07-01): https://v8.dev/blog/jspi
+- V8 is Faster and Safer than Ever! (2023-12-14): https://v8.dev/blog/holiday-season-2023
+- A new way to bring garbage collected programming languages efficiently to WebAssembly (2023-11-01): https://v8.dev/blog/wasm-gc-porting
+- Blazingly fast parsing, part 1: optimizing the scanner (2019-03-25): https://v8.dev/blog/scanner

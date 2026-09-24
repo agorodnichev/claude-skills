@@ -1,0 +1,8 @@
+- Web Vitals (Published 2020-05-04, updated 2024-10-31): https://web.dev/articles/vitals
+- User-centric performance metrics (Footer 2023-08-02): https://web.dev/articles/user-centric-performance-metrics
+- Getting started with measuring Web Vitals (Footer 2025-09-09): https://web.dev/articles/vitals-measurement-getting-started
+- Why is CrUX data different from my RUM data? (Published 2022-08-15, updated 2025-12-17): https://web.dev/articles/crux-and-rum-differences
+- Why lab and field data can be different (and what to do about it) (Footer 2022-07-18): https://web.dev/articles/lab-and-field-data-differences
+- Core Web Vitals workflows with Google tools (Published 2020-05-28, footer 2025-02-28): https://web.dev/articles/vitals-tools
+- Optimize the encoding and transfer size of text-based assets (Footer 2023-12-11): https://web.dev/articles/optimizing-content-efficiency-optimize-encoding-and-transfer
+- Content delivery networks (CDNs) (Footer 2023-12-05): https://web.dev/articles/content-delivery-networks

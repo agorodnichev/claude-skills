@@ -1,0 +1,1 @@
+- Performance monitoring with Lighthouse CI (Footer 2020-07-27): https://web.dev/articles/lighthouse-ci

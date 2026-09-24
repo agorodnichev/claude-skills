@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Log viewer</title>
+    <style>
+      body { margin: 0; font: 13px/1.4 ui-monospace, monospace; }
+      #log { height: 100vh; overflow: auto; }
+    </style>
+    <script type="module">
+      import { createLogFeed } from './src/log-feed.ts';
+      import { mountLogView } from './src/log-view.ts';
+      mountLogView(document.getElementById('log'), createLogFeed(500));
+    </script>
+  </head>
+  <body>
+    <div id="log"></div>
+  </body>
+</html>

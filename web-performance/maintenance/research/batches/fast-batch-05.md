@@ -1,0 +1,8 @@
+- Use image CDNs to optimize images (Footer 2019-08-14 (LCP section added later)): https://web.dev/articles/image-cdns
+- Choose the right image format (Footer 2024-08-13): https://web.dev/articles/choose-the-right-image-format
+- Remove unused code (Footer 2018-11-05): https://web.dev/articles/remove-unused-code
+- Best practices for using third-party embeds (Footer 2021-10-05): https://web.dev/articles/embed-best-practices
+- Infinite scroll without layout shifts (Addy Osmani blog) (2020-07-30): https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/
+- Best practices for cookie notices (Footer 2024-06-13): https://web.dev/articles/cookie-notice-best-practices
+- Best practices for tags and tag managers (Published 2021-07-29, footer 2022-08-24): https://web.dev/articles/tag-best-practices
+- Best practices for carousels (Footer 2021-01-26): https://web.dev/articles/carousel-best-practices

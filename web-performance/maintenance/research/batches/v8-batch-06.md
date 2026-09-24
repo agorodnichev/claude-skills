@@ -1,0 +1,7 @@
+- Fast for-in in V8 (2017-03-01): https://v8.dev/blog/fast-for-in
+- Getting things sorted in V8 (2018-09-28): https://v8.dev/blog/array-sort
+- Optimizing ES2015 proxies in V8 (2017-10-05): https://v8.dev/blog/optimizing-proxies
+- Improving V8 regular expressions (2019-10-04): https://v8.dev/blog/regexp-tier-up
+- An additional non-backtracking RegExp engine (2021-01-11): https://v8.dev/blog/non-backtracking-regexp
+- Super fast super property access (2021-02-18): https://v8.dev/blog/fast-super
+- Adding BigInts to V8 (2018-05-02): https://v8.dev/blog/bigint

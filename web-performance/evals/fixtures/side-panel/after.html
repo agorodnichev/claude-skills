@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Side panel: transform transition (after)</title>
+    <style>
+      body { margin: 0; font: 14px/1.5 system-ui, sans-serif; display: flex; }
+      main { flex: 1; padding: 16px; }
+      .panel { position: fixed; inset: 0 auto 0 0; width: 320px; background: #f4f6f8;
+               transform: translateY(-100%); transition: transform 300ms ease; }
+      .panel.open { transform: translateY(0); }
+      .panel li { padding: 6px 12px; border-bottom: 1px solid #dde2e6; }
+    </style>
+  </head>
+  <body>
+    <aside id="panel" class="panel"><ul id="items"></ul></aside>
+    <main style="margin-left: 320px">
+      <button id="toggle">Toggle panel</button>
+      <p>The panel opens and closes with a transform transition.</p>
+    </main>
+    <script>
+      const items = document.getElementById('items');
+      for (let i = 0; i < 300; i++) {
+        const li = document.createElement('li');
+        li.textContent = `Filter option ${i + 1}`;
+        items.append(li);
+      }
+      const panel = document.getElementById('panel');
+      window.togglePanel = () => panel.classList.toggle('open');
+      document.getElementById('toggle').addEventListener('click', window.togglePanel);
+    </script>
+  </body>
+</html>

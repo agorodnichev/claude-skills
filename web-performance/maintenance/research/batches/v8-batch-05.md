@@ -1,0 +1,7 @@
+- Faster JavaScript calls (2021-02-15): https://v8.dev/blog/adaptor-frame
+- V8 release v7.8 (2019-09-27): https://v8.dev/blog/v8-release-78
+- Improved code caching (2018-04-24): https://v8.dev/blog/improved-code-caching
+- Background compilation (2018-03-26): https://v8.dev/blog/background-compilation
+- Optimizing hash tables: hiding the hash code (2018-01-29): https://v8.dev/blog/hash-code
+- [feature] Weak references and finalizers (2019-07-09): https://v8.dev/features/weak-references
+- Tracing from JS to the DOM and back again (2018-03-01): https://v8.dev/blog/tracing-js-dom

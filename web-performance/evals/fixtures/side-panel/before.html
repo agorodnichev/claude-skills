@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Side panel: height transition (before)</title>
+    <style>
+      body { margin: 0; font: 14px/1.5 system-ui, sans-serif; display: flex; }
+      main { flex: 1; padding: 16px; }
+      .panel { width: 320px; height: 0; overflow: hidden; background: #f4f6f8; transition: height 300ms ease; }
+      .panel.open { height: 100vh; }
+      .panel li { padding: 6px 12px; border-bottom: 1px solid #dde2e6; }
+    </style>
+  </head>
+  <body>
+    <aside id="panel" class="panel"><ul id="items"></ul></aside>
+    <main>
+      <button id="toggle">Toggle panel</button>
+      <p>The panel opens and closes with a height transition.</p>
+    </main>
+    <script>
+      const items = document.getElementById('items');
+      for (let i = 0; i < 300; i++) {
+        const li = document.createElement('li');
+        li.textContent = `Filter option ${i + 1}`;
+        items.append(li);
+      }
+      const panel = document.getElementById('panel');
+      window.togglePanel = () => panel.classList.toggle('open');
+      document.getElementById('toggle').addEventListener('click', window.togglePanel);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+{
+  "skill_name": "web-performance",
+  "evals": [
+    {
+      "id": 1,
+      "name": "write-live-log-view",
+      "prompt": "Implement mountLogView in evals/fixtures/log-viewer/src/log-view.ts. It should show the feed live with the newest line at the bottom, keep at most the last 10,000 lines, follow the bottom unless I scrolled up to read older lines, and return a cleanup function. The feed pushes about 500 lines per second.",
+      "expected_output": "A mountLogView implementation that batches feed lines into one DOM update per frame, keeps a bounded buffer and a bounded or virtualized DOM, avoids per-line layout reads, writes text without HTML parsing, tears everything down, and ends with a short Performance notes block.",
+      "files": ["evals/fixtures/log-viewer/src/log-feed.ts", "evals/fixtures/log-viewer/src/log-view.ts", "evals/fixtures/log-viewer/index.html"],
+      "expectations": [
+        "Feed lines are buffered and applied to the DOM at most once per animation frame, not once per message (DATA-06, EVT-03)",
+        "The stored lines are capped at 10,000 with eviction of the oldest lines (LIFE-05)",
+        "The DOM stays bounded: rows are virtualized or capped, so the page never holds 10,000+ row elements (DOM-02 or DOM-01)",
+        "No layout read (scrollTop, scrollHeight, clientHeight, getBoundingClientRect) happens between DOM writes for single lines; at most one read, then the writes, per frame (EVT-07)",
+        "Line text is written with textContent or Text nodes, not innerHTML per line (DOM-04 or DOM-07)",
+        "The returned cleanup unsubscribes the feed, cancels any pending requestAnimationFrame, and removes scroll listeners (LIFE-01)",
+        "The answer ends with a 'Performance notes' block of at most 4 bullets in the '<Stage> (<rule>): <choice>. Cost: <trade-off>.' form, and says 'Not measured' with a recipe",
+        "No new dependency is added"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "write-streaming-scichart",
+      "prompt": "In evals/fixtures/sensor-chart/src/sensor-chart.ts, stream the sensor feed into the SciChart line chart and keep the last 5 minutes visible. Messages are JSON {t, v} and can reach about 300 per second.",
+      "expected_output": "Streaming code that parses and buffers messages, appends once per frame with appendRange into a fifoCapacity series sized for 5 minutes at peak rate, declares the data flags, keeps time values in float64, moves the visible X window, and deletes the surface on teardown.",
+      "files": ["evals/fixtures/sensor-chart/src/sensor-feed.ts", "evals/fixtures/sensor-chart/src/sensor-chart.ts"],
+      "expectations": [
+        "The data series uses fifoCapacity sized for 5 minutes at the peak message rate, with the arithmetic shown (SC-02)",
+        "Messages are buffered and appended once per frame with appendRange, not with append per message (SC-01, SC-02)",
+        "The series declares dataIsSortedInX, and containsNaN when the data has no NaN (SC-03)",
+        "Time values stay float64 in the axis unit; no Float32Array or float32 conversion of Unix-ms times (SC-05, DATA-05, GPU-14)",
+        "The visible X range follows the last 5 minutes through visibleRange or an equivalent auto-range setting (SC-43)",
+        "Teardown unsubscribes the feed, cancels the frame loop, and calls delete() on the surface exactly once (SC-28, LIFE-01)",
+        "The answer checks API names against the installed SciChart typings, or says they could not be checked, instead of trusting memory",
+        "The answer ends with a 'Performance notes' block that says 'Not measured' with a recipe"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "review-product-grid",
+      "prompt": "Can you review evals/fixtures/product-grid (index.html, product-grid.ts, product-grid.css) for performance before I merge?",
+      "expected_output": "A review report in the references/review.md template: at most 10 findings grouped by pipeline stage, strongest first, each with severity, an evidence label, a fix and a Verify line. No code edits.",
+      "files": ["evals/fixtures/product-grid/index.html", "evals/fixtures/product-grid/product-grid.ts", "evals/fixtures/product-grid/product-grid.css"],
+      "expectations": [
+        "Finds the lazy-loaded hero (LCP) image and asks for fetchpriority=\"high\" without loading=\"lazy\", plus a reserved size (MEDIA-02, MEDIA-04)",
+        "Finds the synchronous analytics script in the head and asks for defer, async or a later load (HTML-04 or HTML-18)",
+        "Finds the CSS @import and asks for a <link> (HTML-07)",
+        "Finds the hover animation of top and box-shadow and asks for transform and opacity, with a pre-painted shadow layer (CSS-01, CSS-02)",
+        "Finds will-change: transform on every card (CSS-05)",
+        "Finds the scroll handler that reads getBoundingClientRect for every card and writes styles on every scroll event, and proposes IntersectionObserver or one rAF with reads before writes (EVT-07, EVT-11)",
+        "Finds grid.innerHTML += inside the loop and the per-card click listeners, and proposes building once and one delegated listener (DOM-07 or DOM-06, EVT-10)",
+        "Finds the full-size product images without srcset, sizes or lazy loading below the fold (MEDIA-03, MEDIA-05)",
+        "Finds the resize listener that re-renders the whole grid and the listeners that are never removed (LIFE-01)",
+        "Findings are grouped by pipeline stage with severity and M, S or H evidence labels, each with a fix and a Verify line; no fixture file is edited"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "measure-side-panel",
+      "prompt": "I switched the side panel open/close from a height transition to a transform. evals/fixtures/side-panel/before.html is the old version and after.html is the new one. Is it actually smoother now? Serve the folder on localhost and measure it.",
+      "expected_output": "A measured answer: the same lab profile for both pages, scripted toggles, several interleaved runs per side, probes and a trace, compare-runs.mjs, and a verdict with numbers, device, profile, build and run count. No claim without data.",
+      "files": ["evals/fixtures/side-panel/before.html", "evals/fixtures/side-panel/after.html"],
+      "expectations": [
+        "Runs a preflight of the Chrome DevTools MCP tools, or stops and says which tool is missing",
+        "Serves the folder on 127.0.0.1 and applies one lab profile (CPU throttling and viewport) to both pages",
+        "Drives the toggle with a script (window.togglePanel) the same way on both pages, with at least 5 interleaved runs per side or a stated reason for fewer",
+        "Uses the frame probe from scripts/probes.js and/or a saved trace, and checks whether the height transition runs on the main thread (non-composited animation, Layout per frame)",
+        "Compares the runs with scripts/compare-runs.mjs and reports the verdict with numbers, the device, the profile, the build and the run count",
+        "Says 'smoother' only if the numbers beat the noise band; a neutral result is reported as neutral",
+        "Does not edit before.html or after.html, and stops the local server and closes the pages at the end"
+      ]
+    }
+  ]
+}

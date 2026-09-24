@@ -1,0 +1,7 @@
+- Code caching for WebAssembly developers (2019-06-17): https://v8.dev/blog/wasm-code-caching
+- Speeding up V8 regular expressions (2017-01-10): https://v8.dev/blog/speeding-up-regular-expressions
+- High-performance ES2015 and beyond (2017-02-17): https://v8.dev/blog/high-performance-es2015
+- V8 release v7.6 (2019-06-19): https://v8.dev/blog/v8-release-76
+- Maglev - V8’s Fastest Optimizing JIT (2023-12-05): https://v8.dev/blog/maglev
+- Launching Ignition and TurboFan (2017-05-15): https://v8.dev/blog/launching-ignition-and-turbofan
+- Indicium: V8 runtime tracer tool (2020-10-01): https://v8.dev/blog/system-analyzer

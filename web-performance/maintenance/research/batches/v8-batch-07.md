@@ -1,0 +1,7 @@
+- [feature] Top-level await (2019-10-08): https://v8.dev/features/top-level-await
+- [feature] Subsume JSON a.k.a. JSON ⊂ ECMAScript (2019-08-14): https://v8.dev/features/subsume-json
+- [feature] Fast, parallel applications with WebAssembly SIMD (2020-01-30): https://v8.dev/features/simd
+- [feature] Atomics.wait, Atomics.notify, Atomics.waitAsync (2020-09-24): https://v8.dev/features/atomics
+- WebAssembly Dynamic Tiering ready to try in Chrome 96 (2021-10-29): https://v8.dev/blog/wasm-dynamic-tiering
+- Liftoff: a new baseline compiler for WebAssembly in V8 (2018-08-20): https://v8.dev/blog/liftoff
+- Speculative Optimizations for WebAssembly using Deopts and Inlining (2025-06-24): https://v8.dev/blog/wasm-speculative-optimizations

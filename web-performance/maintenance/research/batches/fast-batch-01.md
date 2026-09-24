@@ -1,0 +1,8 @@
+- Optimize resource loading with the Fetch Priority API (Footer 2023-11-14): https://web.dev/articles/fetch-priority
+- Optimize input delay (Footer 2023-05-09): https://web.dev/articles/optimize-input-delay
+- How large DOM sizes affect interactivity, and what you can do about it (Footer 2023-05-09): https://web.dev/articles/dom-size-and-interactivity
+- Script evaluation and long tasks (Footer 2023-05-09): https://web.dev/articles/script-evaluation-and-long-tasks
+- Client-side rendering of HTML and interactivity (Footer 2023-05-09): https://web.dev/articles/client-side-rendering-of-html-and-interactivity
+- Best practices for fonts (Footer 2022-10-04): https://web.dev/articles/font-best-practices
+- Best practices for measuring Web Vitals in the field (Footer 2022-05-11): https://web.dev/articles/vitals-field-measurement-best-practices
+- Lazy loading video (Published 2019-08-16, updated 2026-07-02): https://web.dev/articles/lazy-loading-video

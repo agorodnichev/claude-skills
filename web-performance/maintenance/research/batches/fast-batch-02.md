@@ -1,0 +1,8 @@
+- Interaction to Next Paint (INP) (Published 2022-05-06, updated 2025-09-02): https://web.dev/articles/inp
+- Cumulative Layout Shift (CLS) (Footer 2023-04-12): https://web.dev/articles/cls
+- Find slow interactions in the field (Footer 2024-06-07): https://web.dev/articles/find-slow-interactions-in-the-field
+- The most effective ways to improve Core Web Vitals (Footer 2024-10-31): https://web.dev/articles/top-cwv
+- Preload critical assets to improve loading speed (Footer 2018-11-05 (body later updated)): https://web.dev/articles/preload-critical-assets
+- Establish network connections early to improve perceived page speed (Footer 2019-07-30): https://web.dev/articles/preconnect-and-dns-prefetch
+- Prefetch resources to speed up future navigations (Published 2019-09-12, updated 2025-02-08): https://web.dev/articles/link-prefetch
+- Browser-level image lazy loading for the web (Footer 2024-08-13): https://web.dev/articles/browser-level-image-lazy-loading
